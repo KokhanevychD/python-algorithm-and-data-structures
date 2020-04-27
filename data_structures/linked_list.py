@@ -36,7 +36,7 @@ class LinkedList:
             self.head.next = self.end
         else:
             if key is None:
-                self.end.next = listNode(data, self.end.key +1)
+                self.end.next = listNode(data, self.end.key + 1)
             else:
                 self.end.next = listNode(data, key)
             self.end = self.end.next
@@ -45,7 +45,7 @@ class LinkedList:
         temp = self.head
         while temp:
             if key == temp.key:
-                if data != True:
+                if data is not True:
                     return temp
                 return temp.data
             temp = temp.next
@@ -55,11 +55,12 @@ class LinkedList:
         temp = self.head
         while temp:
             if data == temp.data:
-                if key != True:
+                if key is not True:
                     return temp
                 return temp.key
             temp = temp.next
         return 'No element with such data: ' + str(data)
+
     def Pop_ll(self, key):
         obj = self.Key_ll(key, False)
         prev_obj = self.Key_ll(key - 1, False)
@@ -69,6 +70,7 @@ class LinkedList:
             key_changer.key -= 1
             key_changer = key_changer.next
         return obj.data
+
     def Insert_ll(self, key, data):
         obj = self.Key_ll(key, False)
         prev_obj = self.Key_ll(key - 1, False)
@@ -78,6 +80,7 @@ class LinkedList:
         while key_changer:
             key_changer.key += 1
             key_changer = key_changer.next
+
     def Swap_ll(self, key_1, key_2):
         obj_1 = self.Key_ll(key_1, False)
         obj_2 = self.Key_ll(key_2, False)
@@ -92,10 +95,10 @@ for item in value_list:
 print('Elements added to the LinkedList')
 l_list.printList()
 
-print("Element's key found by data" )
+print("Element's key found by data")
 print(l_list.Data_ll('data4'))
 
-print("Element's data found by key" )
+print("Element's data found by key")
 print(l_list.Key_ll(1))
 
 new_elem = 10

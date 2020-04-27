@@ -1,6 +1,7 @@
 from insertion_sort import insertion
 
 
+# bucket sort for floats < 1
 def bucket(in_list):
     buckets = [[] for i in range(len(in_list))]
 

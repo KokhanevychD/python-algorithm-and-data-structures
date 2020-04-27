@@ -7,4 +7,5 @@ def insertion(arr):
     return arr
 
 
-print(insertion([7, 2, 4, 1, 6]))
+if __name__ == "__main__":
+    print(insertion([7, 2, 4, 1, 6]))

@@ -1,9 +1,9 @@
 
 def stein_gcd(num1, num2):
-    if num1 is 0 or num2 is 0:
-        if num1 is 0 and num2 is 0:
+    if num1 == 0 or num2 == 0:
+        if num1 == 0 and num2 == 0:
             return 0
-        elif num1 is 0:
+        elif num1 == 0:
             return num2
         return num1
 

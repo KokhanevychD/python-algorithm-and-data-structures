@@ -15,6 +15,7 @@ def reverse_vowels(in_str):
                     blocked.append(idx_3)
                     in_str[idx_3], in_str[idx] = in_str[idx], in_str[idx_3]
                     break
+    in_str = ''.join(in_str)
     return in_str
 
 

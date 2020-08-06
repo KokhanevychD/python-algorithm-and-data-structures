@@ -1,23 +1,18 @@
 def reverse_vowels(in_str):
     in_str = list(in_str)
     vowels = "aeiou"
-    blocked = []
-    for idx, letter in enumerate(in_str):
-        if idx in blocked:
-            break
-        if letter in vowels:
-            blocked.append(idx)
-            for idx_2, letter_2 in enumerate(in_str[::-1]):
-                if letter_2 in vowels:
-                    idx_3 = len(in_str) - idx_2 - 1
-                    if idx_3 in blocked:
-                        continue
-                    blocked.append(idx_3)
-                    in_str[idx_3], in_str[idx] = in_str[idx], in_str[idx_3]
-                    break
+    letters = []
+    for idx in range(len(in_str)):
+        if in_str[idx].lower() in vowels:
+            letters.append(in_str[idx])
+            in_str[idx] = None
+
+    for idx in range(len(in_str)):
+        if not in_str[idx]:
+            in_str[idx] = letters.pop(-1)
     in_str = ''.join(in_str)
     return in_str
 
 
-res = reverse_vowels('hello werlad')
+res = reverse_vowels('hAllo werlad')
 print(res)
